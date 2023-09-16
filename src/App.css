@@ -87,3 +87,16 @@
   margin: auto;
   gap: 20px;
 }
+
+.button1 {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+.button2 {
+  background-color: blue;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}

@@ -47,16 +47,34 @@ function App() {
       setTheme("light");
     }
   };
+
+  const actionHandler = () => {
+    alert("hi1");
+  };
   return (
     <div className={`parent bg-${globalTheme}`}>
       <h2>{heading}</h2>
       <p>{description}</p>
-      <Button onClick={changeHeading} buttonText="Change Heading" />
-      <Button onClick={toggleTheme} buttonText="Toogle Theme" />
-      <Button onClick={toggleGlobalTheme} buttonText="Parent Theme" />
+      <Button
+        classes="button1"
+        clickHandler={changeHeading}
+        buttonText="Change Heading"
+      />
+
+      <Button
+        classes="button2"
+        clickHandler={toggleTheme}
+        buttonText="Toogle Theme"
+      />
+      <Button
+        classes="button1"
+        clickHandler={toggleGlobalTheme}
+        buttonText="Parent Theme"
+      />
+      <Button clickHandler={actionHandler} buttonText="Continue" />
       <div className={`box-cont bg-${theme}`}>Hey Toggled successfully</div>
-      <Home />
-      <Counter />
+      {/* <Home />
+      <Counter /> */}
       <Button buttonText="Continue" />
     </div>
   );
