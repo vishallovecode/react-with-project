@@ -1,6 +1,8 @@
 import { useState } from "react";
+import Button from "./Button";
+import "./counter.css";
 
-const Counter = () => {
+const Counter = (props) => {
   const [counter, setCounter] = useState(0);
   const reStart = () => {
     setCounter(0);
@@ -15,10 +17,14 @@ const Counter = () => {
   };
   return (
     <div className="counter">
-      <h2>Hey I am counter</h2>
-      <button onClick={reStart}>ReStart</button>
-      <button onClick={increase}>Increase</button>
-      <button onClick={decrease}>Decrease</button>
+      <h2>{props.heading}</h2>
+      <Button classes="increase" clickHandler={reStart} buttonText="ReStart" />
+      <Button
+        classes="decrease"
+        clickHandler={increase}
+        buttonText="Increase"
+      />
+      <Button classes="button1" clickHandler={decrease} buttonText="Decrease" />
       <h2> {counter}</h2>
     </div>
   );

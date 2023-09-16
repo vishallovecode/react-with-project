@@ -10,7 +10,7 @@ import Button from "./Button";
 // Function Components =>React Hooks
 
 // parent component of all react  component
-function App() {
+function App(props) {
   // defining internal variable or state of component
   // management of component label data
   // for managing data inside the component react gives useState
@@ -73,8 +73,9 @@ function App() {
       />
       <Button clickHandler={actionHandler} buttonText="Continue" />
       <div className={`box-cont bg-${theme}`}>Hey Toggled successfully</div>
-      {/* <Home />
-      <Counter /> */}
+      {/* <Home />*/}
+      <Counter heading={"This is counter12"} />
+
       <Button buttonText="Continue" />
     </div>
   );
@@ -90,3 +91,5 @@ export default App;
 
 // JSX => Javascript+ html
 // .js => javascript
+
+// React is one way binding
