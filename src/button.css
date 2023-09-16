@@ -1,0 +1,24 @@
+.button-cont {
+  display: flex;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 2px solid black;
+  width: 100%;
+}
+
+button {
+  width: 200px;
+}
+
+.buttonhome {
+  margin: auto;
+}
