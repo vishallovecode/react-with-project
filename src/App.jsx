@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./Home";
 import Counter from "./Counter";
 import Button from "./Button";
+import NewButton from "./Button2";
 
 // Function Components =>React Hooks
 
@@ -75,8 +76,13 @@ function App(props) {
       <div className={`box-cont bg-${theme}`}>Hey Toggled successfully</div>
       {/* <Home />*/}
       <Counter heading={"This is counter12"} />
-
       <Button buttonText="Continue" />
+
+      <NewButton buttonText="Continue new button" />
+      <NewButton buttonText="Submit Pahale">Submit</NewButton>
+      <NewButton>
+        <b>Submit</b>
+      </NewButton>
     </div>
   );
 }
@@ -93,3 +99,5 @@ export default App;
 // .js => javascript
 
 // React is one way binding
+
+// [{ categoryName: "Bread and Eggs", id: "ahsvcxghscdv" }];

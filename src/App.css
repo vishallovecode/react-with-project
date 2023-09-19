@@ -100,3 +100,12 @@
   color: white;
   border-radius: 10px;
 }
+
+.parent {
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid black;
+  width: 100%;
+  padding-bottom: 150px;
+}
