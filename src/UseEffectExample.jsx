@@ -16,9 +16,10 @@ const UseEffectExample = () => {
   //   inside useEffect will render at every state change or
   // every time component re-render
 
-  useEffect(() => {
-    console.log("useEffect EVERY-RE-RENDER");
-  });
+  // this is not that much useful
+  //   useEffect(() => {
+  //     console.log("useEffect EVERY-RE-RENDER");
+  //   });
 
   // IF YOU PASS SECOND PARAMETER AS EMPTY ARRAY THAT MEANS THE CODE INSIDE THE USEEFFECT
   // RUNS ONLY ONCE AT THE TIME OF MOUTING
@@ -28,9 +29,29 @@ const UseEffectExample = () => {
     console.log("runs after mounting and runs only once");
   }, []);
 
-  const change = () => {
-    setHeading("Component state update to new state");
-    setDescription("this is the phase is called the update phase");
+  useEffect(() => {
+    console.log(description, "::=>hey i only call when  description changes");
+  }, [description]);
+
+  useEffect(() => {
+    console.log(count, "hey i only count when  changes");
+  }, [count]);
+
+  useEffect(() => {
+    console.log(heading, "::=>hey i only call when  heading changes");
+  }, [heading]);
+
+  const hchange = () => {
+    setHeading(`Component state update to new state ${Math.random()}`);
+  };
+
+  const dchange = () => {
+    setDescription(
+      `this is the phase is called the update phase ${Math.random() * 100}`
+    );
+  };
+
+  const increment = () => {
     setCount(count + 1);
   };
 
@@ -38,7 +59,9 @@ const UseEffectExample = () => {
     <div>
       <h2>{heading}</h2>
       <p>{description}</p>
-      <button onClick={change}>Change</button>
+      <button onClick={hchange}>Heading Change</button>
+      <button onClick={dchange}>Description Change</button>
+      <button onClick={increment}>increment</button>
     </div>
   );
 };
