@@ -7,6 +7,7 @@ import Home from "./Home";
 import Counter from "./Counter";
 import Button from "./Button";
 import NewButton from "./Button2";
+import UseEffectExample from "./UseEffectExample";
 
 // Function Components =>React Hooks
 
@@ -18,7 +19,7 @@ function App(props) {
   var heading1 = 123;
 
   // state
-  const [heading, setHeading] = useState("This is the react");
+  let [heading, setHeading] = useState("This is the react");
   const [description, setDescription] = useState("React is very powerful");
   const [theme, setTheme] = useState("light");
   const [globalTheme, setGlobalTheme] = useState("");
@@ -28,8 +29,10 @@ function App(props) {
     setDescription(`React Version ${Math.random() * 100}`);
     // heading = `This is the new Heading ${Math.random() * 100}`;
     // heading1 = `This is the new Heading ${Math.random() * 100}`;
+    console.log("heading", heading);
   };
-  console.log("heading", heading);
+
+  // console.log("bahar heading", heading);
 
   const toggleGlobalTheme = () => {
     if (globalTheme === "light") {
@@ -53,36 +56,39 @@ function App(props) {
     alert("hi1");
   };
   return (
-    <div className={`parent bg-${globalTheme}`}>
-      <h2>{heading}</h2>
-      <p>{description}</p>
-      <Button
-        classes="button1"
-        clickHandler={changeHeading}
-        buttonText="Change Heading"
-      />
+    // <div className={`parent bg-${globalTheme}`}>
+    //   <h2>{heading}</h2>
+    //   <p>{description}</p>
+    //   <Button
+    //     classes="button1"
+    //     clickHandler={changeHeading}
+    //     buttonText="Change Heading"
+    //   />
 
-      <Button
-        classes="button2"
-        clickHandler={toggleTheme}
-        buttonText="Toogle Theme"
-      />
-      <Button
-        classes="button1"
-        clickHandler={toggleGlobalTheme}
-        buttonText="Parent Theme"
-      />
-      <Button clickHandler={actionHandler} buttonText="Continue" />
-      <div className={`box-cont bg-${theme}`}>Hey Toggled successfully</div>
-      {/* <Home />*/}
-      <Counter heading={"This is counter12"} />
-      <Button buttonText="Continue" />
+    //   <Button
+    //     classes="button2"
+    //     clickHandler={toggleTheme}
+    //     buttonText="Toogle Theme"
+    //   />
+    //   <Button
+    //     classes="button1"
+    //     clickHandler={toggleGlobalTheme}
+    //     buttonText="Parent Theme"
+    //   />
+    //   <Button clickHandler={actionHandler} buttonText="Continue" />
+    //   <div className={`box-cont bg-${theme}`}>Hey Toggled successfully</div>
+    //   {/* <Home />*/}
+    //   {/* <Counter heading={"This is counter12"} />
+    //   <Button buttonText="Continue" />
 
-      <NewButton buttonText="Continue new button" />
-      <NewButton buttonText="Submit Pahale">Submit</NewButton>
-      <NewButton>
-        <b>Submit</b>
-      </NewButton>
+    //   <NewButton buttonText="Continue new button" />
+    //   <NewButton buttonText="Submit Pahale">Submit</NewButton>
+    //   <NewButton>
+    //     <b>Submit</b>
+    //   </NewButton> */}
+    // </div>
+    <div>
+      <UseEffectExample />
     </div>
   );
 }
