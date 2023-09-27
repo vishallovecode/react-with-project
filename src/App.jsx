@@ -24,6 +24,8 @@ function App(props) {
   const [theme, setTheme] = useState("light");
   const [globalTheme, setGlobalTheme] = useState("");
 
+  const [toggle, setToggle] = useState(true);
+
   const changeHeading = () => {
     setHeading(`This is the new Heading ${Math.random() * 100}`);
     setDescription(`React Version ${Math.random() * 100}`);
@@ -88,7 +90,8 @@ function App(props) {
     //   </NewButton> */}
     // </div>
     <div>
-      <UseEffectExample />
+      <button onClick={() => setToggle(!toggle)}>Toggle</button>
+      {toggle && <UseEffectExample />}
     </div>
   );
 }

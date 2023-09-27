@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const UseEffectExample = () => {
   const [heading, setHeading] = useState("Intitial value of state");
+
   const [description, setDescription] = useState(
     "This phase are called mouting"
   );
@@ -53,7 +54,18 @@ const UseEffectExample = () => {
 
   const increment = () => {
     setCount(count + 1);
+    setTimeout(() => {}, 100); //MEMORY
   };
+
+  //
+
+  useEffect(() => {
+    // this is normal behaviour of useEffect
+    return () => {
+      // THIS CODE ONLY RUNS WHEN THE COMPONENT IS UNMOUNTED FROM THE DOM
+      console.log("Component Unmounted");
+    };
+  }, []);
 
   return (
     <div>
