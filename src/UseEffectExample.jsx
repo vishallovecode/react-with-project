@@ -1,7 +1,10 @@
+import { async } from "q";
 import { useEffect, useState } from "react";
 
 const UseEffectExample = () => {
   const [heading, setHeading] = useState("Intitial value of state");
+
+  const [users, setUsers] = useState([]);
 
   const [description, setDescription] = useState(
     "This phase are called mouting"
@@ -67,6 +70,18 @@ const UseEffectExample = () => {
     };
   }, []);
 
+  async function getUsers() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const userData = await res.json(); // json() async
+    console.log(userData, "userData");
+    setUsers(userData);
+  }
+
+  // Api call for initial rendering
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <div>
       <h2>{heading}</h2>
@@ -74,6 +89,28 @@ const UseEffectExample = () => {
       <button onClick={hchange}>Heading Change</button>
       <button onClick={dchange}>Description Change</button>
       <button onClick={increment}>increment</button>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        {users.map((user) => {
+          return (
+            <div
+              style={{
+                display: "flex",
+                padding: "40px",
+                width: "300px",
+                border: "2px solid red",
+              }}
+            >
+              <h2>{user.email}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
