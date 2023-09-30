@@ -8,15 +8,22 @@ import Counter from "./Counter";
 import Button from "./Button";
 import NewButton from "./Button2";
 import UseEffectExample from "./UseEffectExample";
+import DropDownExample from "./dropdownExample";
 
 // Function Components =>React Hooks
 
 // parent component of all react  component
 function App(props) {
+  const OrgList = [
+    { ordId: "123456", orgName: "Mh-delhi4" },
+    { ordId: "123457", orgName: "Mh-delhi3" },
+    { ordId: "123458", orgName: "Mh-delhi2" },
+    { ordId: "123459", orgName: "Mh-delhi1" },
+  ];
+
   // defining internal variable or state of component
   // management of component label data
   // for managing data inside the component react gives useState
-  var heading1 = 123;
 
   // state
   let [heading, setHeading] = useState("This is the react");
@@ -57,6 +64,12 @@ function App(props) {
   const actionHandler = () => {
     alert("hi1");
   };
+
+  // dropdown handling
+  const handleChange = (event) => {
+    console.log(event.target.value);
+  };
+
   return (
     // <div className={`parent bg-${globalTheme}`}>
     //   <h2>{heading}</h2>
@@ -89,9 +102,12 @@ function App(props) {
     //     <b>Submit</b>
     //   </NewButton> */}
     // </div>
+    // <div>
+    //   <button onClick={() => setToggle(!toggle)}>Toggle</button>
+    //   {toggle && <UseEffectExample />}
+    // </div>
     <div>
-      <button onClick={() => setToggle(!toggle)}>Toggle</button>
-      {toggle && <UseEffectExample />}
+      <DropDownExample />
     </div>
   );
 }
@@ -110,3 +126,5 @@ export default App;
 // React is one way binding
 
 // [{ categoryName: "Bread and Eggs", id: "ahsvcxghscdv" }];
+
+// i want to show list which coming from backend
