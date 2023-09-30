@@ -45,6 +45,7 @@ const DropDownExample = () => {
           return <option value={org.ordId}>{org.orgName}</option>;
         })}
       </select> */}
+
       <DropDown
         options={OrgList}
         handleChange={handleChange}
