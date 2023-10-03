@@ -76,3 +76,15 @@ const DropDownExample = () => {
 };
 
 export default DropDownExample;
+
+// keys
+// conditional rendering
+
+// const idKey = "orgId";
+// {
+//   /*  const data = {
+//   orgId:123c, name:'Vishal'
+//  } */
+// }
+
+// data[idKey];
