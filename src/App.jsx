@@ -10,6 +10,10 @@ import NewButton from "./Button2";
 import UseEffectExample from "./UseEffectExample";
 import DropDownExample from "./dropdownExample";
 import KeyExample from "./KeyExample";
+import CheckBox from "./component/checkbox";
+
+// importing StyleComponent
+import StyleComponent from "./component/stylecomponent";
 
 // Function Components =>React Hooks
 
@@ -71,6 +75,32 @@ function App(props) {
     console.log(event.target.value);
   };
 
+  const handleCheckbox = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const [checked, setChecked] = useState(false);
+
+  const [languages, setLanguages] = useState([
+    { id: 1, value: "English", isSelected: false },
+    { id: 2, value: "Hindi", isSelected: false },
+    { id: 3, value: "Marathi", isSelected: false },
+  ]);
+
+  const handleLanguage = (event) => {
+    const updatedLanguage = languages.map((language) => {
+      if (language.id == event.target.id) {
+        return {
+          ...language,
+          isSelected: event.target.checked,
+        };
+      } else {
+        return language;
+      }
+    });
+    setLanguages(updatedLanguage);
+  };
+
   return (
     // <div className={`parent bg-${globalTheme}`}>
     //   <h2>{heading}</h2>
@@ -107,9 +137,37 @@ function App(props) {
     //   <button onClick={() => setToggle(!toggle)}>Toggle</button>
     //   {toggle && <UseEffectExample />}
     // </div>
-    <div>
+    <div className="App">
       {/* <DropDownExample /> */}
-      <KeyExample />
+      {/* <KeyExample /> */}
+      {/* <CheckBox
+        label={"Mark topic completed"}
+        value={checked}
+        handleCheckbox={handleCheckbox}
+      />
+      <CheckBox
+        label={"Mark topic completed"}
+        value={checked}
+        handleCheckbox={handleCheckbox}
+      /> */}
+      {/* {languages?.map((language) => {
+        return (
+          <CheckBox
+            handleCheckbox={handleLanguage}
+            isSelected={language.isSelected}
+            label={language.value}
+            uniqueKey={language.id}
+          />
+        );
+      })}
+      <DropDownExample /> */}
+      {/* <CheckBox value={!checked} handleCheckbox={handleCheckbox} /> */}
+
+      <StyleComponent heading={"Dynamic Styling"} />
+      {/* <StyleComponent heading={"Dynamic Styling"}>
+        <Button buttonText="hey" />
+        <Button buttonText="hey" />
+      </StyleComponent> */}
     </div>
   );
 }
@@ -130,3 +188,25 @@ export default App;
 // [{ categoryName: "Bread and Eggs", id: "ahsvcxghscdv" }];
 
 // i want to show list which coming from backend
+
+{
+  /* <Component>
+<span>het</span>
+<Button></Button>
+<Input/>
+<div>Hey I am div</div>
+</Component>
+
+<div>
+
+
+
+<Component>
+<span>het</span>
+<Button></Button>
+<Input/>
+<div>Hey I am div</div>
+</Component>
+
+</div> */
+}

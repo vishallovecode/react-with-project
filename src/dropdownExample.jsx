@@ -63,6 +63,7 @@ const DropDownExample = () => {
         options={users}
         handleChange={handleChange}
         idKey="id"
+        isMulti={true}
         labelKey="firstName"
       />
       <DropDown

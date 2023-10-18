@@ -1,0 +1,15 @@
+.checkbox-cont {
+  display: flex;
+  padding: 10px;
+}
+
+.left {
+  right: 1%;
+}
+.right {
+  left: 20%;
+}
+
+.label-pos {
+  position: relative;
+}

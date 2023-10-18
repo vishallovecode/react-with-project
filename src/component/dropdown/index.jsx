@@ -5,9 +5,9 @@
 // container component and display component
 
 const DropDown = (props) => {
-  const { options, handleChange, idKey, labelKey } = props;
+  const { options, handleChange, idKey, labelKey, isMulti = false } = props;
   return (
-    <select onChange={handleChange}>
+    <select onChange={handleChange} multiple={isMulti}>
       {Array.isArray(options) &&
         options?.map((option, index) => {
           return (
