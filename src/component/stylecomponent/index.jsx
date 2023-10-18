@@ -25,6 +25,14 @@ const StyleComponent = (props) => {
     marginTop: "20px",
   });
 
+  const randomColor = ["red", "blue", "pink", "yellow", "orange", "black"];
+
+  const [userInputColor, setUserInputColor] = useState("");
+
+  const handleChange = (event) => {
+    setUserInputColor(event.target.value);
+  };
+
   // red and blue
   const toggleColor = () => {
     // i am updating the value of style
@@ -44,12 +52,33 @@ const StyleComponent = (props) => {
     };
     setStyle(updatedStyle);
   };
+
+  const randColorPicker = () => {
+    let updatedStyle = { ...style };
+    const generateRandomIndex = parseInt(Math.random() * randomColor.length);
+    let color = randomColor[generateRandomIndex];
+    updatedStyle = {
+      ...updatedStyle,
+      backgroundColor: color,
+    };
+    setStyle(updatedStyle);
+  };
+
+  const submit = () => {
+    let updatedStyle = { ...style };
+    updatedStyle = {
+      ...updatedStyle,
+      backgroundColor: userInputColor,
+    };
+    setStyle(updatedStyle);
+  };
   return (
     <div>
       <h2>{props.heading}</h2>
       <button onClick={toggleColor}>Change Color</button>
-      <input placeholder="Enter Color" /> <button>Submit</button>
-      <button>Add Random Color</button>
+      <input onChange={handleChange} placeholder="Enter Color" />{" "}
+      <button onClick={submit}>Submit</button>
+      <button onClick={randColorPicker}>Add Random Color</button>
       <div style={style}></div>
     </div>
   );
@@ -75,3 +104,10 @@ const { heading } = data;
 
 // const style = {display: "flex"}
 //  <element style = {style}>
+
+// rest operator
+// spread operator
+// destructuring object
+// destructurning  array
+// exporting component or module
+// map  function
