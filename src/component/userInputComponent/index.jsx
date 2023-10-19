@@ -3,28 +3,22 @@ import Input from "../Input/input";
 
 // display container
 const LoginForm = (props) => {
-  const {
-    password,
-    userName,
-    onChangeHandlerUserName,
-    onChangeHandlerPassword,
-    loginHandler,
-  } = props;
+  const { password, userName, onChange, loginHandler } = props;
   return (
     <div className="flex m-auto  items-center w-96 justify-center flex-col gap-8 border px-20 py-20">
       <Input
-        onChange={onChangeHandlerUserName} // event listener
+        onChange={onChange} // event listener
         value={userName}
-        // name="username"
+        name="username"
         classes="w-60"
         type="text"
         placeholder="Enter User Name"
       />
       <Input
         value={password}
-        onChange={onChangeHandlerPassword}
+        onChange={onChange}
         classes="w-60"
-        // name="password"
+        name="password"
         type="password"
         placeholder="Enter Password"
       />

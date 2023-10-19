@@ -5,15 +5,21 @@ const Login = () => {
   const initialUserInfo = { username: "", password: "" };
   const [userInfo, setUserInfo] = useState(initialUserInfo);
 
-  const passwordChange = (event) => {
-    const updatedUserInfo = { ...userInfo };
-    updatedUserInfo.password = event.target.value;
-    setUserInfo(updatedUserInfo);
-  };
+  //   const passwordChange = (event) => {
+  //     const updatedUserInfo = { ...userInfo };
+  //     updatedUserInfo.password = event.target.value;
+  //     setUserInfo(updatedUserInfo);
+  //   };
 
-  const userNameChange = (event) => {
+  //   const userNameChange = (event) => {
+  //     const updatedUserInfo = { ...userInfo };
+  //     updatedUserInfo.username = event.target.value;
+  //     setUserInfo(updatedUserInfo);
+  //   };
+
+  const onChange = (event) => {
     const updatedUserInfo = { ...userInfo };
-    updatedUserInfo.username = event.target.value;
+    updatedUserInfo[event.target.name] = event.target.value;
     setUserInfo(updatedUserInfo);
   };
 
@@ -41,8 +47,7 @@ const Login = () => {
   console.log(userInfo, "userInfo");
   return (
     <LoginForm
-      onChangeHandlerUserName={userNameChange}
-      onChangeHandlerPassword={passwordChange}
+      onChange={onChange}
       password={userInfo.password}
       userName={userInfo.username}
       loginHandler={login}
