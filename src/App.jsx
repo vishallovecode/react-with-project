@@ -15,6 +15,7 @@ import CheckBox from "./component/checkbox";
 // importing StyleComponent
 import StyleComponent from "./component/stylecomponent";
 import TailWindCss from "./component/tailwindcss";
+import LoginForm from "./component/userInputComponent";
 
 // Function Components =>React Hooks
 
@@ -164,13 +165,19 @@ function App(props) {
       <DropDownExample /> */}
       {/* <CheckBox value={!checked} handleCheckbox={handleCheckbox} /> */}
 
-      <StyleComponent heading={"Dynamic Styling"} />
+      {/* <StyleComponent heading={"Dynamic Styling"} />
 
-      <TailWindCss />
+      <TailWindCss /> */}
       {/* <StyleComponent heading={"Dynamic Styling"}>
         <Button buttonText="hey" />
         <Button buttonText="hey" />
       </StyleComponent> */}
+
+      {/* Form Component */}
+
+      <div className="mt-10">
+        <LoginForm />
+      </div>
     </div>
   );
 }

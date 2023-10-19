@@ -5,14 +5,14 @@ import "./button.css";
 //   return <button className="button-cont">Submit</button>;
 // }
 
-export function Input() {
-  return (
-    <div>
-      <input placeholder="Enter A name" />
-      <Button />
-    </div>
-  );
-}
+// export function Input() {
+//   return (
+//     <div>
+//       <input placeholder="Enter A name" />
+//       <Button />
+//     </div>
+//   );
+// }
 
 // react components
 export const Summary = () => {
