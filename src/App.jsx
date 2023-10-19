@@ -16,6 +16,7 @@ import CheckBox from "./component/checkbox";
 import StyleComponent from "./component/stylecomponent";
 import TailWindCss from "./component/tailwindcss";
 import LoginForm from "./component/userInputComponent";
+import Login from "./Screen/logincontainer";
 
 // Function Components =>React Hooks
 
@@ -176,7 +177,7 @@ function App(props) {
       {/* Form Component */}
 
       <div className="mt-10">
-        <LoginForm />
+        <Login />
       </div>
     </div>
   );
