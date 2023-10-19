@@ -14,6 +14,7 @@ import CheckBox from "./component/checkbox";
 
 // importing StyleComponent
 import StyleComponent from "./component/stylecomponent";
+import TailWindCss from "./component/tailwindcss";
 
 // Function Components =>React Hooks
 
@@ -164,6 +165,8 @@ function App(props) {
       {/* <CheckBox value={!checked} handleCheckbox={handleCheckbox} /> */}
 
       <StyleComponent heading={"Dynamic Styling"} />
+
+      <TailWindCss />
       {/* <StyleComponent heading={"Dynamic Styling"}>
         <Button buttonText="hey" />
         <Button buttonText="hey" />
