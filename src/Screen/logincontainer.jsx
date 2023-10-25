@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LoginForm from "../component/userInputComponent";
+import GenerateForm from "../component/GenerateForm";
 
 const Login = () => {
   const initialUserInfo = { username: "", password: "" };
@@ -44,14 +45,54 @@ const Login = () => {
     }
   };
 
+  const inputForm = [
+    {
+      Fieldvariant: "Input",
+      type: "text",
+      placeHolder: "Enter User Name",
+      label: "",
+      name: "username",
+    },
+    {
+      Fieldvariant: "Input",
+      type: "password",
+      placeHolder: "Enter Password ",
+      label: "",
+      name: "password",
+    },
+    {
+      Fieldvariant: "Input",
+      type: "email",
+      placeHolder: "Enter Email Name",
+      label: "",
+      name: "email",
+    },
+    {
+      Fieldvariant: "Input",
+      type: "number",
+      placeHolder: "Enter Phone Number",
+      label: "",
+      name: "contact",
+    },
+    {
+      Fieldvariant: "Button",
+      type: "password",
+      placeHolder: "",
+      buttonText: "Continue",
+      label: "",
+      name: "",
+    },
+  ];
+
   console.log(userInfo, "userInfo");
   return (
-    <LoginForm
-      onChange={onChange}
-      password={userInfo.password}
-      userName={userInfo.username}
-      loginHandler={login}
-    />
+    // <LoginForm
+    //   onChange={onChange}
+    //   password={userInfo.password}
+    //   userName={userInfo.username}
+    //   loginHandler={login}
+    // />
+    <GenerateForm formConfig={inputForm} />
   );
 };
 
