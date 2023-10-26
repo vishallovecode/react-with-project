@@ -7,16 +7,23 @@
 const DropDown = (props) => {
   const { options, handleChange, idKey, labelKey, isMulti = false } = props;
   return (
-    <select onChange={handleChange} multiple={isMulti}>
-      {Array.isArray(options) &&
-        options?.map((option, index) => {
-          return (
-            <option key={option[idKey]} value={option[idKey]}>
-              {option[labelKey]}
-            </option>
-          );
-        })}
-    </select>
+    <div className="flex flex-col gap-1">
+      <label className="self-start">{props.label}</label>
+      <select
+        className="border py-2 rounded"
+        onChange={handleChange}
+        multiple={isMulti}
+      >
+        {Array.isArray(options) &&
+          options?.map((option, index) => {
+            return (
+              <option key={option[idKey]} value={option[idKey]}>
+                {option[labelKey]}
+              </option>
+            );
+          })}
+      </select>
+    </div>
   );
 };
 

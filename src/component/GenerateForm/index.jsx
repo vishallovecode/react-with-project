@@ -1,5 +1,6 @@
 import Button from "../../Button";
 import Input from "../Input/input";
+import DropDown from "../dropdown";
 
 const GenerateForm = (props) => {
   const { formConfig } = props;
@@ -14,6 +15,9 @@ const GenerateForm = (props) => {
               classes="border  w-60 p-2 rounded bg-red-600 text-white disabled:bg-gray-300"
             />
           );
+        else if (config.Fieldvariant == "Select") {
+          return <DropDown {...config} />;
+        }
       })}
     </div>
   );
