@@ -5,7 +5,15 @@ import GenerateForm from "../component/GenerateForm";
 const Login = () => {
   const initialUserInfo = { username: "", password: "" };
   const [userInfo, setUserInfo] = useState(initialUserInfo);
-
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+    email: "",
+    contact: "",
+    language: "",
+    city: "",
+    isUnderAge: false,
+  });
   //   const passwordChange = (event) => {
   //     const updatedUserInfo = { ...userInfo };
   //     updatedUserInfo.password = event.target.value;
@@ -22,6 +30,17 @@ const Login = () => {
     const updatedUserInfo = { ...userInfo };
     updatedUserInfo[event.target.name] = event.target.value;
     setUserInfo(updatedUserInfo);
+  };
+
+  const handleFormChange = (event, type) => {
+    const updateFormData = { ...formData };
+    if (type === "checkbox") {
+      updateFormData[event.target.name] = event.target.checked;
+    } else {
+      updateFormData[event.target.name] = event.target.value;
+    }
+
+    setFormData(updateFormData);
   };
 
   //kminchelle
@@ -45,13 +64,17 @@ const Login = () => {
     }
   };
 
+  const actionHandler = () => {
+    console.log(formData);
+  };
+
   const inputForm = [
     {
       Fieldvariant: "Input",
       type: "text",
       placeHolder: "Enter User Name",
       label: "User Name",
-      name: "username",
+      name: "userName",
     },
     {
       Fieldvariant: "Input",
@@ -85,6 +108,7 @@ const Login = () => {
       label: "Select Language",
       idKey: "id",
       labelKey: "label",
+      name: "language",
     },
 
     {
@@ -98,6 +122,7 @@ const Login = () => {
       label: "Select City",
       idKey: "id",
       labelKey: "name",
+      name: "city",
     },
     {
       Fieldvariant: "Checkbox",
@@ -107,6 +132,7 @@ const Login = () => {
       label: "Are You under age ?",
       value: true,
       checked: true,
+      name: "isUnderAge",
     },
     {
       Fieldvariant: "Button",
@@ -126,7 +152,11 @@ const Login = () => {
     //   userName={userInfo.username}
     //   loginHandler={login}
     // />
-    <GenerateForm formConfig={inputForm} />
+    <GenerateForm
+      actionHandler={actionHandler}
+      formConfig={inputForm}
+      handleFormChange={handleFormChange}
+    />
   );
 };
 

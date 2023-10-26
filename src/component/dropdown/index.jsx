@@ -6,7 +6,14 @@
 
 const DropDown = (props) => {
   console.log(props);
-  const { options, handleChange, idKey, labelKey, isMulti = false } = props;
+  const {
+    options,
+    handleChange,
+    idKey,
+    labelKey,
+    isMulti = false,
+    name,
+  } = props;
   return (
     <div className="flex flex-col gap-1">
       <label className="self-start">{props.label}</label>
@@ -14,6 +21,7 @@ const DropDown = (props) => {
         className="border py-2 rounded w-[200px]"
         onChange={handleChange}
         multiple={isMulti}
+        name={name}
       >
         {Array.isArray(options) &&
           options?.map((option, index) => {
