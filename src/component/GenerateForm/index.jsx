@@ -1,5 +1,6 @@
 import Button from "../../Button";
 import Input from "../Input/input";
+import CheckBox from "../checkbox";
 import DropDown from "../dropdown";
 
 const GenerateForm = (props) => {
@@ -7,6 +8,7 @@ const GenerateForm = (props) => {
   return (
     <div className="flex m-auto  items-center w-96 justify-center flex-col gap-8 border px-20 py-20">
       {formConfig.map((config) => {
+        // config => object
         if (config.Fieldvariant === "Input") return <Input {...config} />;
         else if (config.Fieldvariant === "Button")
           return (
@@ -17,6 +19,8 @@ const GenerateForm = (props) => {
           );
         else if (config.Fieldvariant == "Select") {
           return <DropDown {...config} />;
+        } else if (config.Fieldvariant == "Checkbox") {
+          return <CheckBox {...config} />;
         }
       })}
     </div>

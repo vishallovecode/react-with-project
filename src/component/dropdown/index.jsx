@@ -5,12 +5,13 @@
 // container component and display component
 
 const DropDown = (props) => {
+  console.log(props);
   const { options, handleChange, idKey, labelKey, isMulti = false } = props;
   return (
     <div className="flex flex-col gap-1">
       <label className="self-start">{props.label}</label>
       <select
-        className="border py-2 rounded"
+        className="border py-2 rounded w-[200px]"
         onChange={handleChange}
         multiple={isMulti}
       >
@@ -26,7 +27,6 @@ const DropDown = (props) => {
     </div>
   );
 };
-
 export default DropDown;
 
 // Array.isArray(options) => true that means option is array

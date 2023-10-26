@@ -86,6 +86,28 @@ const Login = () => {
       idKey: "id",
       labelKey: "label",
     },
+
+    {
+      Fieldvariant: "Select",
+      options: [
+        { id: "123", name: "Kanpur" },
+        { id: "13", name: "Bangalore" },
+        { id: "23", name: "Pune" },
+        { id: "43", name: "Delhi" },
+      ],
+      label: "Select City",
+      idKey: "id",
+      labelKey: "name",
+    },
+    {
+      Fieldvariant: "Checkbox",
+      type: "checkbox",
+      placeHolder: "",
+      buttonText: "",
+      label: "Are You under age ?",
+      value: true,
+      checked: true,
+    },
     {
       Fieldvariant: "Button",
       type: "password",
