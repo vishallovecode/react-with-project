@@ -5,6 +5,7 @@ import GenerateForm from "../component/GenerateForm";
 const Login = () => {
   const initialUserInfo = { username: "", password: "" };
   const [userInfo, setUserInfo] = useState(initialUserInfo);
+  let [count, setCount] = useState(0);
   const [formData, setFormData] = useState({
     userName: "",
     password: "",
@@ -32,40 +33,54 @@ const Login = () => {
     setUserInfo(updatedUserInfo);
   };
 
-  const handleFormChange = (event, type) => {
-    const updateFormData = { ...formData };
-    if (type === "checkbox") {
-      updateFormData[event.target.name] = event.target.checked;
-    } else {
-      updateFormData[event.target.name] = event.target.value;
-    }
+  // const handleFormChange = (event, type) => {
+  //   setCount(++count);
+  //   console.log(count, "check===start====");
+  //   const updateFormData = { ...formData };
+  //   if (type === "checkbox") {
+  //     updateFormData[event.target.name] = event.target.checked;
+  //   } else {
+  //     updateFormData[event.target.name] = event.target.value;
+  //   }
 
-    setFormData(updateFormData);
-  };
+  //   setFormData(updateFormData);
+
+  //   console.log(++count, "check=======end========");
+  // };
 
   //kminchelle
   //0lelplR
-  const login = async () => {
-    try {
-      const res = await fetch("https://dummyjson.com/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: userInfo.username,
-          password: userInfo.password,
-          // expiresInMins: 60, // optional
-        }),
-      });
+  // const login = async () => {
+  //   try {
+  //     const res = await fetch("https://dummyjson.com/auth/login", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         username: userInfo.username,
+  //         password: userInfo.password,
+  //         // expiresInMins: 60, // optional
+  //       }),
+  //     });
 
-      const data = await res.json();
-      console.log(data);
-    } catch (error) {
-      alert(error);
-    }
-  };
+  //     const data = await res.json();
+  //     console.log(data);
+  //   } catch (error) {
+  //     alert(error);
+  //   }
+  // };
 
-  const actionHandler = () => {
-    console.log(formData);
+  const actionHandler = (event) => {
+    // form onSubmit refresh our page when click submit button
+    const formData1 = new FormData(event.currentTarget);
+    // value and key=> name attribute value
+    console.log("formDataformData1", formData1);
+    const updateFormData = { ...formData };
+    formData1.forEach((data, key) => {
+      updateFormData[key] = data;
+    });
+
+    event.preventDefault();
+    console.log(updateFormData);
   };
 
   const inputForm = [
@@ -136,7 +151,7 @@ const Login = () => {
     },
     {
       Fieldvariant: "Button",
-      type: "password",
+      type: "submit",
       placeHolder: "",
       buttonText: "Continue",
       label: "Email",
@@ -155,7 +170,7 @@ const Login = () => {
     <GenerateForm
       actionHandler={actionHandler}
       formConfig={inputForm}
-      handleFormChange={handleFormChange}
+      // handleFormChange={handleFormChange}
     />
   );
 };

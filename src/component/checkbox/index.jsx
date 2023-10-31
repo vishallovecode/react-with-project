@@ -26,6 +26,7 @@ const CheckBox = (props) => {
     label,
     position = "left",
     uniqueKey,
+    name,
   } = props;
   return (
     <div className={style["checkbox-cont"]}>
@@ -37,6 +38,7 @@ const CheckBox = (props) => {
         checked={isSelected}
         onChange={handleCheckbox}
         type="checkbox"
+        name={name}
       />
     </div>
   );
