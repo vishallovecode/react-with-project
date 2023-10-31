@@ -52,3 +52,6 @@ export default GenerateForm;
 // Radio
 // Date
 // Label
+
+// event.target
+// event.currentTarget

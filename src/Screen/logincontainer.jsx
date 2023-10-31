@@ -71,10 +71,14 @@ const Login = () => {
 
   const actionHandler = (event) => {
     // form onSubmit refresh our page when click submit button
-    const formData1 = new FormData(event.currentTarget);
+
+    console.log(event.currentTarget);
+    const formData1 = new FormData(event.currentTarget); // constructor which takes the action target element as argument
     // value and key=> name attribute value
     console.log("formDataformData1", formData1);
+    // form Data
     const updateFormData = { ...formData };
+    console.log(typeof formData1);
     formData1.forEach((data, key) => {
       updateFormData[key] = data;
     });
