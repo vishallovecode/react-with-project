@@ -89,3 +89,19 @@ export default DropDownExample;
 // }
 
 // data[idKey];
+
+// useEffect is nothing it is just a higher order function which take two parameter first one is callback and second one is dependency
+
+// const callback = () => {
+//   console.log("hey");
+// };
+
+// 1.
+//useEffect(callback, [])
+// useEffect(()=> { console.log("hey");}, []) => the callback function call only once when
+// first time compoentn render
+
+// 2.
+//useEffect(callback)
+// useEffect(()=> { console.log("hey")}) => the callback function call only  every time  the any state of
+// compnent change or component re-render

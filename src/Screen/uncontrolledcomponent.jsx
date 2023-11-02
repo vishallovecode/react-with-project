@@ -10,8 +10,8 @@ const LoginUnControlled = () => {
       className="  m-auto  w-[200px] flex flex-col gap-3"
       onSubmit={loginHandler}
     >
-      <input value="1234" id="#input1" placeholder="Enter User Name" />
-      <input value="234" id="#input2" placeholder="Enter Password" />
+      <input id="#input1" placeholder="Enter User Name" />
+      <input id="#input2" placeholder="Enter Password" />
       <input type="submit" value={"Login"} />
     </form>
   );
