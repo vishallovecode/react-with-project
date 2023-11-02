@@ -105,3 +105,19 @@ export default DropDownExample;
 //useEffect(callback)
 // useEffect(()=> { console.log("hey")}) => the callback function call only  every time  the any state of
 // compnent change or component re-render
+
+//3.
+
+//useEffect(callback)
+// useEffect(()=> { console.log("hey")} ,  [var1,  var2, var3]) => the callback function call  if any of the dependecny get change
+
+//4.
+
+//useEffect(callback)
+// useEffect(()=> { console.log("hey")} ,  []) => the callback function call  if any of the dependecny get change
+
+// useEffect(() => {
+//   return () => {
+//     // this code will run when componet is unmounting
+//   };
+// }, []);
