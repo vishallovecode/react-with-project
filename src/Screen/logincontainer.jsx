@@ -1,6 +1,8 @@
 import { useState } from "react";
 import LoginForm from "../component/userInputComponent";
 import GenerateForm from "../component/GenerateForm";
+import LoginUnControlled from "./uncontrolledcomponent";
+import LoginControlled from "./controlledcomponent";
 
 const Login = () => {
   const initialUserInfo = { username: "", password: "" };
@@ -69,6 +71,16 @@ const Login = () => {
   //   }
   // };
 
+  // emailValid ??
+  // numberValid ??
+  // fieldRquired ??
+  // lenghtKaValidation
+  // password
+
+  const validateInput = (value, key) => {
+    // this function will check whether user type value is valid or not
+  };
+
   const actionHandler = (event) => {
     // form onSubmit refresh our page when click submit button
 
@@ -80,7 +92,11 @@ const Login = () => {
     const updateFormData = { ...formData };
     console.log(typeof formData1);
     formData1.forEach((data, key) => {
-      updateFormData[key] = data;
+      if (validateInput()) {
+        updateFormData[key] = data;
+      } else {
+        // you need to update the specific key error value
+      }
     });
 
     event.preventDefault();
@@ -94,6 +110,8 @@ const Login = () => {
       placeHolder: "Enter User Name",
       label: "User Name",
       name: "userName",
+      required: true,
+      error: "",
     },
     {
       Fieldvariant: "Input",
@@ -171,11 +189,17 @@ const Login = () => {
     //   userName={userInfo.username}
     //   loginHandler={login}
     // />
-    <GenerateForm
-      actionHandler={actionHandler}
-      formConfig={inputForm}
-      // handleFormChange={handleFormChange}
-    />
+    // <GenerateForm
+    //   actionHandler={actionHandler}
+    //   formConfig={inputForm}
+    //   // handleFormChange={handleFormChange}
+    // />
+    <div className="flex flex-col gap-10">
+      <h2>UNControlled login</h2>
+      <LoginUnControlled />
+      <h2>Controlled login</h2>
+      <LoginControlled />
+    </div>
   );
 };
 
