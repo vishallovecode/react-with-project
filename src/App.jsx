@@ -17,6 +17,7 @@ import StyleComponent from "./component/stylecomponent";
 import TailWindCss from "./component/tailwindcss";
 import LoginForm from "./component/userInputComponent";
 import Login from "./Screen/logincontainer";
+import Parent from "./Screen/twowaybinding";
 
 // Function Components =>React Hooks
 
@@ -177,7 +178,8 @@ function App(props) {
       {/* Form Component */}
 
       <div className="mt-10">
-        <Login />
+        {/* <Login /> */}
+        <Parent/>
       </div>
     </div>
   );
