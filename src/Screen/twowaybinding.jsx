@@ -54,3 +54,7 @@ return  (
     </div>
 )
 }
+
+// (e)=>{
+//     getChildData(e.target.value)
+// }
